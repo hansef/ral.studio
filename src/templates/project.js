@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import ReactPlayer from 'react-player'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 function renderNewLines(str) {
   if (!str) return '';

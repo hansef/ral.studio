@@ -2,15 +2,19 @@
 @tailwind components; 
 @tailwind utilities;
 
-.project a {
+.project a, .bio a {
   @apply text-gray-500;
   @apply font-normal;
 }
-.project a:hover {
+.project a:hover, .bio a:hover {
   @apply text-black;
   @apply underline;
 }
 
 .blurb p {
+  @apply mb-2;
+}
+
+.bio p {
   @apply mb-2;
 }
