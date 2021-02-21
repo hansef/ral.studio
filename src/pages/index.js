@@ -18,10 +18,13 @@ const IndexPage = ({data}) => {
             <div className="box-border relative my-3 px-3 w-full overflow-hidden lg:w-1/2">
               <Link to={`/${category.slug}/`}>
                 <img className="object-cover w-full" src={category.coverPhoto.fixed.src} alt="" />
-                <div className="absolute top-0 left-0 bottom-0 right-0 px-3 opacity-0 hover:opacity-100">
+                <div className="hidden lg:block absolute top-0 left-0 bottom-0 right-0 px-3 opacity-0 hover:opacity-100">
                   <div className="lato text-lg uppercase font-bold flex w-full h-full bg-black bg-opacity-50 text-white justify-center items-center">
                     View {category.name} Projects
                   </div>
+                </div>
+                <div className="lg:hidden font-lato text-sm uppercase font-bold pt-3 pb-3">
+                  View {category.name} Projects &gt;
                 </div>
               </Link>
             </div>

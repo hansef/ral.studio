@@ -77,7 +77,7 @@ export default props => {
               <p className="font-lato font-light pb-3 text-gray-500" dangerouslySetInnerHTML={{ __html: renderNewLines(productionInfo?.productionInfo) }}></p>
             )}
             {blurb?.raw && (
-              <div className="font-lato font-light leading-8 pb-10 blurb">{renderRichText(blurb)}</div>
+              <div className="font-lato font-light leading-8 pb-5 lg:pb-10 blurb">{renderRichText(blurb)}</div>
             )}
           </div>
           
