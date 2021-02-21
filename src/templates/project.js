@@ -71,7 +71,7 @@ export default props => {
           <div className="order-first md:order-last md:col-span-4 md:pl-10">
             <h1 className="font-lato font-bold text-2xl pb-2">{displayName}</h1>
             {projectType?.projectType && (
-              <p className="font-lato pb-6" dangerouslySetInnerHTML={{ __html: renderNewLines(projectType?.projectType) }}></p>
+              <p className="font-lato pb-4" dangerouslySetInnerHTML={{ __html: renderNewLines(projectType?.projectType) }}></p>
             )}
             {productionInfo?.productionInfo && (
               <p className="font-lato font-light pb-3 text-gray-500" dangerouslySetInnerHTML={{ __html: renderNewLines(productionInfo?.productionInfo) }}></p>
