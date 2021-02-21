@@ -62,9 +62,11 @@ export default props => {
               )
             })}
 
-            {category?.[0].slug && (
-              <Link to={`/${category[0].slug}/`} className="font-lato font-semibold">&lt; View All {category[0].name} Projects</Link>
-            )}
+            {category.map((c, i) => {
+              return (
+                <p><Link key={i} to={`/${c.slug}/`} className="font-lato font-semibold">&lt; View All {c.name} Projects</Link></p>
+              )
+            })}
           </div>
           <div className="order-first md:order-last md:col-span-4 md:pl-10">
             <h1 className="font-lato font-bold text-2xl pb-2">{displayName}</h1>
@@ -75,7 +77,7 @@ export default props => {
               <p className="font-lato font-light pb-3 text-gray-500" dangerouslySetInnerHTML={{ __html: renderNewLines(productionInfo?.productionInfo) }}></p>
             )}
             {blurb?.raw && (
-              <div className="font-lato font-light leading-8 pb-10">{renderRichText(blurb)}</div>
+              <div className="font-lato font-light leading-8 pb-10 blurb">{renderRichText(blurb)}</div>
             )}
           </div>
           

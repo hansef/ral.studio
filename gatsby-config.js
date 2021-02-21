@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Rabbit AL Friedrich`,
-    description: ``,
+    description: `Rabbit is a Portland-based designer of environments for performance, film, and civic engagement.`,
     author: 'Rabbit AL Friedrich'
   },
   plugins: [

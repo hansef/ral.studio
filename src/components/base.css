@@ -4,8 +4,13 @@
 
 .project a {
   @apply text-gray-500;
+  @apply font-normal;
 }
 .project a:hover {
   @apply text-black;
   @apply underline;
+}
+
+.blurb p {
+  @apply mb-2;
 }
