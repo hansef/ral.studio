@@ -1,22 +1,55 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import { Link, graphql } from 'gatsby'
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+const IndexPage = ({data}) => {
+  const categories = data.allContentfulCategory.edges.map(edge => edge.node)
+  categories.sort((a, b) => (a.name > b.name) ? 1 : -1)
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <div className="w-full lg:w-8/12 pb-8 lg:pb-12">
+        <p className="font-lato text-3xl text-gray-600 leading-10">Rabbit is a Portland-based designer of environments for performance, film, and civic engagement.</p>
+      </div>
+      <div className="flex flex-wrap -mx-2 overflow-hidden">
+        {categories.map(category => {
+          return (
+            <div className="box-border relative my-3 px-3 w-full overflow-hidden lg:w-1/2">
+              <Link to={`/${category.slug}/`}>
+                <img className="object-cover w-full" src={category.coverPhoto.fixed.src} alt="" />
+                <div className="absolute top-0 left-0 bottom-0 right-0 px-3 opacity-0 hover:opacity-100">
+                  <div className="lato text-lg uppercase font-bold flex w-full h-full bg-black bg-opacity-50 text-white justify-center items-center">
+                    View {category.name} Projects
+                  </div>
+                </div>
+              </Link>
+            </div>
+          )
+        })}
+      </div>
+    </Layout>
+  )
+}
+
+export const query = graphql`
+  query IndexPageQuery {
+    allContentfulCategory {
+      edges {
+        node {
+          name
+          slug
+          coverPhoto {
+            fixed(resizingBehavior: FILL, width: 1000, height: 563, toFormat: JPG, quality: 90) {
+              src
+              width
+              height
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

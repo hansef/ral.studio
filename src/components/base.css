@@ -1,0 +1,11 @@
+@tailwind base; 
+@tailwind components; 
+@tailwind utilities;
+
+.project a {
+  @apply text-gray-500;
+}
+.project a:hover {
+  @apply text-black;
+  @apply underline;
+}
