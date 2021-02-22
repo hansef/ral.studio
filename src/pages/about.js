@@ -13,7 +13,7 @@ const AboutPage = ({data}) => {
       <SEO title="About" />
       <div className="flex flex-wrap -mx-2 overflow-hidden">
         <div className="my-3 px-10 py-0 md:py-5 md:pr-16 md:pl-3 w-full overflow-hidden md:w-2/5">
-          <img src={headshot.src} alt="" width={headshot.width} height={headshot.height} />
+          <img className="md:mt-2" src={headshot.src} alt="" width={headshot.width} height={headshot.height} />
         </div>
         <div className="my-3 px-3 py-0 md:py-5 md:pl-16 md:pr-3 w-full overflow-hidden md:w-3/5 md:border-l-4 md:border-gray-300">
           <div className="font-lato font-light text-lg leading-8 bio">{renderRichText(bio)}</div>
