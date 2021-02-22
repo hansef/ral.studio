@@ -33,5 +33,16 @@ module.exports = {
         accessToken: 'iGwOlXhR2kpxeHSIZSZQRgJyFTOn5YblVoFWdcKtqFk',
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          'G-DF836M95R5'
+        ],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
   ],
 }
