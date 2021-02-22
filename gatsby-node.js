@@ -17,6 +17,13 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             name
             slug
+            coverPhoto {
+              fixed(resizingBehavior: FILL, width: 1000, height: 563, toFormat: JPG, quality: 90) {
+                src
+                width
+                height
+              }
+            }
             projects {
               name
               slug
@@ -38,6 +45,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/category.js`),
       context: {
         name: node.name,
+        coverPhoto: node.coverPhoto,
         projects: node.projects
       }
     })
@@ -70,6 +78,11 @@ exports.createPages = async ({ graphql, actions }) => {
             videoUrl {
               videoUrl
             }
+            coverPhoto {
+              fixed(resizingBehavior: FILL, width: 600, height: 338, toFormat: JPG, quality: 100) {
+                src
+              }
+            }
             photoGallery {
               fixed(resizingBehavior: FILL, width: 1000, toFormat: JPG, quality: 90) {
                 src
@@ -95,6 +108,7 @@ exports.createPages = async ({ graphql, actions }) => {
         productionInfo: node.productionInfo,
         blurb: node.blurb,
         videoUrl: node.videoUrl,
+        coverPhoto: node.coverPhoto,
         photoGallery: node.photoGallery,
       }
     })

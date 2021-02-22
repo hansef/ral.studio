@@ -5,11 +5,11 @@ import SEO from '../components/seo'
 
 export default props => {
   const {
-    pageContext: { name, projects }
+    pageContext: { name, coverPhoto, projects }
   } = props
   return (
     <Layout>
-      <SEO title={name} />
+      <SEO title={name} image={coverPhoto.fixed.src} />
       <div className="flex flex-wrap -mx-2 overflow-hidden">
         {projects.map((project, i) => {
           return (
