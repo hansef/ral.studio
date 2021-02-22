@@ -64,7 +64,7 @@ export default props => {
 
             {category.map((c, i) => {
               return (
-                <span className="block font-lato font-semibold uppercase text-sm pb-3"><Link className="text-gray-500 hover:text-black hover:underline" key={i} to={`/${c.slug}/`}>&lt; View All {c.name} Projects</Link></span>
+                <span className="block font-lato font-semibold uppercase text-sm pb-3"><Link className="text-gray-500 hover:text-black hover:underline" key={i} to={`/${c.slug}/`}>&larr; View All {c.name} Projects</Link></span>
               )
             })}
           </div>

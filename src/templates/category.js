@@ -22,7 +22,7 @@ export default props => {
                   </div>
                 </div>
                 <div className="lg:hidden font-lato text-sm uppercase font-bold pt-3 pb-3">
-                  {project.name} &gt;
+                  {project.name} &rarr;
                 </div>
               </Link>
             </div>

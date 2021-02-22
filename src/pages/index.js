@@ -25,7 +25,7 @@ const IndexPage = ({data}) => {
                   </div>
                 </div>
                 <div className="lg:hidden font-lato text-sm uppercase font-bold pt-3 pb-3">
-                  View {category.name} Projects &gt;
+                  View {category.name} Projects &rarr;
                 </div>
               </Link>
             </div>
