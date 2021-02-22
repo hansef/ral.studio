@@ -13,7 +13,7 @@ export default props => {
       <div className="flex flex-wrap -mx-2 overflow-hidden">
         {projects.map((project, i) => {
           return (
-            <div className="box-border relative my-3 px-3 w-full overflow-hidden md:w-1/2 lg:w-1/3 text-gray-500 hover:text-black hover:underline">
+            <div className="box-border relative my-3 px-3 w-full overflow-hidden md:w-1/2 lg:w-1/3 text-gray-500 hover:text-black">
               <Link to={`/projects/${project.slug}/`}>
                 <img className="object-cover w-full" src={project.coverPhoto.fixed.src} alt="" />
                 <div className="hidden lg:block absolute top-0 left-0 bottom-0 right-0 px-3 opacity-0 hover:opacity-100">
