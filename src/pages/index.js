@@ -16,7 +16,7 @@ const IndexPage = ({data}) => {
       <div className="flex flex-wrap -mx-2 overflow-hidden">
         {categories.map((category, i) => {
           return (
-            <div key={i} className="box-border relative my-3 px-3 w-full overflow-hidden lg:w-1/2">
+            <div key={i} className="box-border relative my-3 px-3 w-full overflow-hidden lg:w-1/2 text-gray-500 hover:text-black hover:underline">
               <Link to={`/${category.slug}/`}>
                 <img className="object-cover w-full" src={category.coverPhoto.fixed.src} alt="" />
                 <div className="hidden lg:block absolute top-0 left-0 bottom-0 right-0 px-3 opacity-0 hover:opacity-100">
