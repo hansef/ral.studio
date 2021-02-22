@@ -28,7 +28,7 @@ export default props => {
   return (
     <Layout>
       <SEO title={displayName} />
-      <section className="w-full project">
+      <section className="w-full">
         <div className="grid lg:grid-cols-12 gap-4">
           <div className="md:col-span-8">
             {videoUrl?.videoUrl && (
@@ -64,11 +64,11 @@ export default props => {
 
             {category.map((c, i) => {
               return (
-                <p><Link key={i} to={`/${c.slug}/`} className="font-lato font-semibold">&lt; View All {c.name} Projects</Link></p>
+                <span className="block font-lato font-semibold uppercase text-sm pb-3"><Link className="text-gray-500 hover:text-black hover:underline" key={i} to={`/${c.slug}/`}>&lt; View All {c.name} Projects</Link></span>
               )
             })}
           </div>
-          <div className="order-first md:order-last md:col-span-4 md:pl-10">
+          <div className="project order-first md:order-last md:col-span-4 md:pl-10">
             <h1 className="font-lato font-bold text-2xl pb-2">{displayName}</h1>
             {projectType?.projectType && (
               <p className="font-lato pb-4" dangerouslySetInnerHTML={{ __html: renderNewLines(projectType?.projectType) }}></p>
