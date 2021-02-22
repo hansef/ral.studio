@@ -28,7 +28,7 @@ export default props => {
   const displayName = longFormName || name
   return (
     <Layout>
-      <SEO title={displayName} coverPhoto={coverPhoto.fixed.src} />
+      <SEO title={displayName} image={coverPhoto.fixed.src} />
       <section className="w-full">
         <div className="grid lg:grid-cols-12 gap-4">
           <div className="md:col-span-8">
