@@ -18,7 +18,7 @@ const AboutPage = ({data}) => {
         <div className="my-3 px-3 py-0 md:py-5 md:pl-16 md:pr-3 w-full overflow-hidden md:w-2/3 md:border-l-4 md:border-gray-300">
           <div className="font-lato font-light text-lg leading-8 bio">{renderRichText(bio)}</div>
           <div className="font-lato font-semibold uppercase text-sm pt-5">
-            <a href={cv} target="_blank">Download Rabbit's CV &gt;</a>
+            <a href={cv} target="_blank" className="hover:underline">Download Rabbit's CV &gt;</a>
           </div>
         </div>
       </div>
