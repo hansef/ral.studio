@@ -5,27 +5,15 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Rabbit AL Friedrich`,
-    description: `Rabbit is a Portland-based designer of environments for performance, film, and civic engagement.`,
+    description: ``,
     author: 'Rabbit AL Friedrich'
   },
   plugins: [
     'gatsby-plugin-postcss',
     `gatsby-plugin-react-helmet`,
-    /*
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    */
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-meta-redirect`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -41,6 +29,18 @@ module.exports = {
         ],
         pluginConfig: {
           head: true,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        headers: {
+          '/fonts/*': [
+            'Cache-Control: public',
+            'Cache-Control: max-age=365000000',
+            'Cache-Control: immutable',
+          ],
         },
       },
     },
