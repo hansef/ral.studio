@@ -25,8 +25,8 @@ function SEO({ description, image, lang, meta, title }) {
           homepageTagline {
             homepageTagline
           }
-          headshot {
-            fixed(resizingBehavior: FILL, cropFocus: FACE, width: 500, height: 500, toFormat: JPG, quality: 90) {
+          defaultShareImage {
+            fixed(resizingBehavior: FILL, width: 750, toFormat: JPG, quality: 90) {
               src
             }
           }
@@ -37,7 +37,7 @@ function SEO({ description, image, lang, meta, title }) {
 
   const metaDescription = description || contentfulAbout.homepageTagline.homepageTagline
   const defaultTitle = site.siteMetadata?.title
-  const metaImage = image || contentfulAbout.headshot.fixed.src
+  const metaImage = image || contentfulAbout.defaultShareImage.fixed.src
 
   return (
     <Helmet
