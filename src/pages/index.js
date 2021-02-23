@@ -21,7 +21,7 @@ const IndexPage = ({data}) => {
                 <img className="object-cover w-full" src={category.coverPhoto.fixed.src} alt="" />
                 <div className="hidden lg:block absolute top-0 left-0 bottom-0 right-0 px-3 opacity-0 hover:opacity-100">
                   <div className="lato text-lg uppercase font-bold flex w-full h-full bg-black bg-opacity-50 text-white justify-center items-center">
-                    View {category.name} Projects
+                    View {category.name} Projects &rarr;
                   </div>
                 </div>
                 <div className="lg:hidden font-lato text-sm uppercase font-bold pt-3 pb-3">
