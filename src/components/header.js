@@ -1,6 +1,6 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Link } from 'gatsby'
 
 const Header = ({ siteTitle }) => {
   const [isOpen, setisOpen] = React.useState(false)

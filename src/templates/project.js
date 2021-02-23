@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import ReactPlayer from 'react-player'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Video from '../components/video'
 
 function renderNewLines(str) {
   if (!str) return '';
@@ -26,35 +26,14 @@ export default props => {
     }
   } = props
   const displayName = longFormName || name
+  
   return (
     <Layout>
       <SEO title={displayName} image={coverPhoto.fixed.src} />
       <section className="w-full">
         <div className="grid lg:grid-cols-12 gap-4">
           <div className="md:col-span-8">
-            {videoUrl?.videoUrl && (
-              <div className="relative mb-5" style={{ paddingTop: '56.25%' }}>
-                <ReactPlayer 
-                  className="absolute inset-0 w-full h-full"
-                  url={videoUrl?.videoUrl}
-                  width="100%"
-                  height="100%"
-                  config={{
-                    youtube: {
-                      playerVars: {
-                        modestbranding: 1
-                      }
-                    },
-                    vimeo: {
-                      playerOptions: {
-                        title: 1,
-                        byline: 1,
-                        controls: 1
-                      }
-                    }
-                  }} />
-              </div>
-            )}
+            {videoUrl?.videoUrl && <Video videoUrl={videoUrl.videoUrl} />}
             {photoGallery.map((photo, i) => {
               return (
                 <div className="pb-5" key={i}>

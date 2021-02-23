@@ -1,13 +1,14 @@
-import React from "react"
+import React from 'react'
 import { graphql } from 'gatsby'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const AboutPage = ({data}) => {
   const bio = data.contentfulAbout.bio
   const headshot = data.contentfulAbout.headshot.fixed
   const cv = data.contentfulAbout.cv.file.url
+  
   return (
     <Layout>
       <SEO title="About" />
